@@ -1,0 +1,46 @@
+.wrapper {
+  position: relative;
+  padding-top: 100px;
+  width: 400px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.edit {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background-color: #f2f3f4;
+  margin:  auto;
+  z-index: 5;
+  top: 100px;
+}
+
+.update-wrapper {
+  display: inline-block;
+  position: absolute;
+  top: 10%;
+  left: 15%;
+}
+
+.update {
+  width: 200px;
+  height: 20px;
+}
+
+.btn-update {
+  cursor: pointer;
+  height: 26px;
+}
+.note {
+  display: flex;
+}
+
+.note div{
+  padding-left: 5px;
+  width: 50%;
+}
+
+span {
+  cursor:pointer;padding-left:10px;padding-right:10px
+}

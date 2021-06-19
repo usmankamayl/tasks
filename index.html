@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div class="wrapper">
+      <div id="app">
+       <h1>{{ title }}</h1> 
+       <form @submit.prevent="onSubmit">
+        <input type="text" v-model="input.value" :placeholder="input.placeholder" required>
+        <button type="submit">Add new note</button>
+       </form>
+       <br>
+       <div class="notes">
+         <div class="note" v-for="(note, index) in notes" :key="index">
+          <div>
+            {{ note.name }}
+          </div>
+          <span @click="remove(index)" title="удалить">&#x2715</span>
+          <span @click="change(index)" class="edit-task" title="редактировать">&#9998</span>
+         </div>
+       </div>
+       <div v-if="edit" class="edit">
+         <div class="update-wrapper">
+           <p>Редактировать задачу</p>
+          <input type="text" class="update" v-model="update.value">
+          <button type="submit" class="btn-update" @click="updateTask">Изменить</button>
+         </div>
+       </div>
+      </div>
+
+    </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
